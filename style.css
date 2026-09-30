@@ -18,9 +18,20 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    background-color: var(--light-pink-color)
+
+body.home {
+    background: var(--primary-color)
 }
+
+.about-section,
+.menu-section,
+.testimonial-section,
+.gallery-section,
+.contact-section {
+    background: var(--light-pink-color); /* or whatever each section used before */
+}
+
+/* html:has(body.home) { background: var(--primary-color); } */
 
 img {
     width: 100%;
@@ -54,7 +65,7 @@ nav {
     width: 100%;
     position: fixed;
     z-index: 5000;
-    /* animation: fadeIn 0.5s ease; */
+    animation: slideDown 0.6s ease forwards;
 }
 
 nav .logo-text {
@@ -99,6 +110,11 @@ nav .link:hover {
     to {
         opacity: 1;
     }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 
