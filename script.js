@@ -5,6 +5,7 @@ const closeBtn = document.querySelector(`#close-btn`);
 const sideBar = document.querySelector(`.links`);
 const overlay = document.querySelector(`.overlay`);
 const links = document.querySelectorAll(`.link`);
+const sections = document.querySelectorAll(`.section`);
 
 openBtn.addEventListener(`click`, function() {
     sideBar.classList.toggle(`show-side-bar`);
@@ -65,8 +66,15 @@ const swiper = new Swiper('.slide-wrapper', {
 
 });
 
-const newFeature = function() {
-  console.log(`welcome to my application`)
-}
 
-newFeature();
+//creating reveal on scroll animation
+const sectionObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add(`show`)
+  })
+}, {
+  threshold: 0.2
+})
+
+sections.forEach(section => sectionObserver.observe(section))
+
