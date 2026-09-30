@@ -64,3 +64,9 @@ const swiper = new Swiper('.slide-wrapper', {
   }
 
 });
+
+const newFeature = function() {
+  console.log(`welcome to my application`)
+}
+
+newFeature();
