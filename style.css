@@ -227,6 +227,7 @@ nav .link:hover {
 
 .links.show-side-bar {
     left: 0;
+    height: 100vh;
 }
 
 .overlay {
